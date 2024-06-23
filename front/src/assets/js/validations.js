@@ -18,15 +18,15 @@ export function validate(fieldName, value) {
 }
 
 
-export function validateField(target) {
-    const { name, value } = target;
+export function validateInputTextField(target) {
+    const { name, value, type } = target;
+    if (type === 'checkbox') return true;
     const sibling = target?.nextElementSibling;
     const errorMessage = validate(name, value);
     !errorMessage ? target.classList.remove('form__input-group-input--error') : target.classList.add('form__input-group-input--error');
-    if (sibling?.textContent != null) {
+    if (sibling?.textContent != undefined) {
         sibling.textContent = errorMessage;
-        return false;
     }
-    return true;
+    return !errorMessage;
 }
 

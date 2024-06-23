@@ -25,7 +25,7 @@ $('.form__input-group-input', true).forEach(e => {
 
 
 
-$('.form').addEventListener('submit', e => {
+$('.form').addEventListener('submit', async e => {
     e.preventDefault();
     const target = e.target;
     let hasError = false;
@@ -36,20 +36,30 @@ $('.form').addEventListener('submit', e => {
 
     if (hasError) return;
     
-    signInWithEmailAndPassword(auth, 'thallesju@gmail.com', 'camilo123')
-    .then(response => {
-        const apiUrl = 'http://localhost:8080';
-        const { accessToken } = response.user;
-        console.log(accessToken);
-        fetch(apiUrl, {
-            headers: {
-                Authorization: `Bearer ${accessToken}`,
-            }
-        }).then(response => {
-            console.log(response);
-        })
-    })
-    .catch(error => console.log(error))
-
+    const accessToken = await sign(target['email'].value, target['password'].value);
+    await receiveBackendMessage(accessToken);
 });
 
+async function sign(email, password) {
+    try {
+        const { user: { accessToken } } = await signInWithEmailAndPassword(auth, 'thallesju@gmail.com', 'camilo123');
+        return accessToken;
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+async function receiveBackendMessage(token) {
+    try {
+        console.log(token)
+        const req = await fetch('http://localhost:8080/', {
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+        });
+        const json = req.json();
+        console.log(json);
+    } catch (error) {
+        console.log(error);
+    }
+}

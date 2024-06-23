@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/styles.css" type="text/css">
+</head>
+<body>
+
+    <div>
+        <form class="form" method="post">
+            <h1 class="form__title">Bem-vindo</h1>
+
+            <div class="form__input-group">
+                <input type="text" name="email" class="form__input-group-input block" placeholder="example@gmail.com">
+                <span class="form__input-group-error"></span>
+            </div>
+
+            <div class="form__input-group">
+                <input type="password" name="password" class="form__input-group-input block" placeholder="******">
+                <span class="form__input-group-error"></span>
+            </div>
+
+            <div class="form__actions">
+               <div class="flex justify-between">
+                    <span class="form__actions-checkbox">
+                        <input type="checkbox">
+                        Lembrar senha
+                    </span>
+                    <a class="form__actions-forgot-password">Esqueceu a senha?</a>
+               </div>
+               <button class="form__actions-button raised-button">Login</button>
+
+               <p class="flex justify-center mt-1">Ou entre com</p>
+
+                <ul class="form__list-sign-providers">
+                    <li class="form__list-sign-providers-item form__list-sign-providers-item--red">G</li>
+                    <li class="form__list-sign-providers-item form__list-sign-providers-item--blue">F</li>
+                </ul>
+
+                <div class="horizontal-line"></div>
+                
+                <span class="flex justify-center gap-1">
+                    Ainda não possui uma conta?
+                    <a class="semibold">Cadastra-se</a>
+                </span>
+            </div>
+        </form>
+    </div>
+    
+    <script type="module" src="script.js"></script>
+</body>
+</html>

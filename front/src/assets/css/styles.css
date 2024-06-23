@@ -1,0 +1,111 @@
+@import url(base.css);
+
+html, body {
+    height: 100%;
+    background: linear-gradient(to bottom, #7904D6, #A20BBB, #E31690);
+}
+
+body {
+    padding: 3rem;
+}
+
+.form {
+    max-width: 600px;
+    width: 100%;
+    margin: auto;
+
+    padding: 3rem 3rem;
+    border: 1px solid #33333343;
+    border-radius: 0.8rem;
+    box-shadow: 0 2px 2px #33333344;
+    background-color: white;
+
+    .form__title {
+        text-align: center;
+        color: #6207a8e9;
+    }
+
+    .form__input-group {
+        margin: 1rem 0;
+    }
+
+    .form__input-group-input {
+        padding: 1.2rem 1rem;
+        width: 100%;
+        border-radius: 0.5rem;
+        outline: none;
+        border: none;
+        box-shadow: 0 2px 2px #3333331b;
+        border: 1px solid rgba(0, 0, 0, 0.3);
+        outline: 0.1rem solid transparent;
+        font-size: 1rem;
+    }
+
+    .form__input-group-error {
+        color: red;
+        margin-top: 0.4rem;
+        display: block;
+    }
+
+    .form__input-group-input--error {
+        transition: all 0.2s ease-in-out;
+        outline: 0.1rem solid rgb(255, 37, 37);
+        &::placeholder {
+            color: red;
+        }
+    }
+
+    .form__actions-checkbox {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .form__actions-forgot-password  {
+        &:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+
+    .form__actions-button {
+        background: linear-gradient(to right, #7904D6, #A20BBB, #E31690);
+        color: white;
+        margin-top: 2rem;
+        font-size: 1.2rem;
+        padding: 1rem;
+    }
+
+    .form__list-sign-providers {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 2.5rem;
+        margin-top: 1rem;
+
+        .form__list-sign-providers-item {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            place-items: center;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+
+        .form__list-sign-providers-item--red {
+            background-color: #E34133;
+        }
+        .form__list-sign-providers-item--blue {
+            background-color: #0A66C6;
+        }
+
+    }
+}

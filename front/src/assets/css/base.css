@@ -1,0 +1,95 @@
+
+@layer reset {
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+@layer utilities {
+    .flex {
+        display: flex;
+    }
+
+    .flex-col {
+        flex-direction: column;
+    }
+
+    .items-center {
+        align-items: center;
+    }
+
+    .justify-between {
+        justify-content: space-between;
+    }
+    
+    .justify-center {
+        justify-content: center;
+    }
+
+    .block {
+        display: block;
+    }
+    
+    .gap-1 {
+        gap: 0.5rem;
+    }
+
+    .gap-2 {
+        gap: 1rem;
+    }
+
+    .gap-3 {
+        gap: 2rem;
+    }
+
+    .gap-4 {
+        gap: 3rem;
+    }
+
+    .fs-1 {
+        font-size: 1rem;
+    }
+
+    .fs-2 {
+        font-size: 1.2rem;
+    }
+
+    .mt-1 {
+        margin-top: 1rem;
+    }
+    
+    .semibold {
+        font-weight: 600;
+    }
+
+   
+
+}
+
+@layer components {
+
+    .raised-button {
+        width: 100%;
+        padding: 0.8rem;
+        @apply flex items-center justify-center;
+        font-weight: bold;
+        font-size: 16px;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        border-radius: 0.5rem;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    .horizontal-line {
+        height: 0.05rem;
+        background-color: #33333390;
+        margin: 2rem 0;
+    }
+
+}

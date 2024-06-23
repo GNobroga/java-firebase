@@ -42,7 +42,7 @@ $('.form').addEventListener('submit', async e => {
 
 async function sign(email, password) {
     try {
-        const { user: { accessToken } } = await signInWithEmailAndPassword(auth, 'thallesju@gmail.com', 'camilo123');
+        const { user: { accessToken } } = await signInWithEmailAndPassword(auth, email, password);
         return accessToken;
     } catch (error) {
         console.log(error);
